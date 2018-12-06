@@ -9,7 +9,8 @@ public class SimpleCharacterControl : MonoBehaviour
 {
 
     public GameObject MessagePanel;
-   
+    public GameObject heartone;
+    public Image hearttwo;
 
     private enum ControlMode
     {
@@ -262,7 +263,8 @@ public class SimpleCharacterControl : MonoBehaviour
         }
         if (trashcan.gameObject.CompareTag("papertrashcan") & (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.M)))
         {
-            OpenMessagePanel("");
+            OpenMessagePanel("");            
+            Destroy(heartone);
             errormessage++;
             Second();
             
@@ -280,6 +282,7 @@ public class SimpleCharacterControl : MonoBehaviour
         if (trashcan.gameObject.CompareTag("glasstrashcan") & (Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.M)))
         {
             OpenMessagePanel("");
+            Destroy(hearttwo);
             errormessage++;
             Second();
             
