@@ -39,9 +39,9 @@ public class SimpleCharacterControl : MonoBehaviour
     public int glasscount = 0;
     public int plasticcount = 0;
 
-    private int papercountlast = 0;
-    private int glasscountlast = 0;
-    private int plasticcountlast = 0;
+    public int papercountlast = 0;
+    public int glasscountlast = 0;
+    public int plasticcountlast = 0;
 
     private  int trashtag;
     public int errormessage=0;
@@ -234,7 +234,7 @@ public class SimpleCharacterControl : MonoBehaviour
 
             Destroy(other.gameObject);
 
-            if (papercountlast == 9 && glasscountlast == 12 & plasticcountlast == 12)
+            if (papercountlast == 9 && glasscountlast == 12 && plasticcountlast == 12)
             {
                 winmenu();
             }
