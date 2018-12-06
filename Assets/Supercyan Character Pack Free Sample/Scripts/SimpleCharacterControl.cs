@@ -9,7 +9,12 @@ public class SimpleCharacterControl : MonoBehaviour
 {
 
     public GameObject MessagePanel;
+<<<<<<< HEAD
     public AudioSource Select;
+=======
+    public GameObject heartone;
+    public Image hearttwo;
+>>>>>>> 122be2b60352873f176991fbeb4a7f306db70c9b
 
     private enum ControlMode
     {
@@ -263,7 +268,8 @@ public class SimpleCharacterControl : MonoBehaviour
         }
         if (trashcan.gameObject.CompareTag("papertrashcan") & (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.M)))
         {
-            OpenMessagePanel("");
+            OpenMessagePanel("");            
+            Destroy(heartone);
             errormessage++;
             StartCoroutine(Second());
 
@@ -282,6 +288,7 @@ public class SimpleCharacterControl : MonoBehaviour
         if (trashcan.gameObject.CompareTag("glasstrashcan") & (Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.M)))
         {
             OpenMessagePanel("");
+            Destroy(hearttwo);
             errormessage++;
             StartCoroutine(Second());
 
