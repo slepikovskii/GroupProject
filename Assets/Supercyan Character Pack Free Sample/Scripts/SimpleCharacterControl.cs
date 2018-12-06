@@ -9,7 +9,7 @@ public class SimpleCharacterControl : MonoBehaviour
 {
 
     public GameObject MessagePanel;
-   
+    public AudioSource Select;
 
     private enum ControlMode
     {
@@ -206,7 +206,8 @@ public class SimpleCharacterControl : MonoBehaviour
         {
             
             m_animator.SetTrigger("Pickup");
-           
+            Select = GetComponent<AudioSource>();
+            Select.Play();
 
 
             if (other.gameObject.CompareTag("paperpickup"))
