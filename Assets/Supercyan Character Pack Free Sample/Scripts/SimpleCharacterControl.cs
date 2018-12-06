@@ -264,8 +264,9 @@ public class SimpleCharacterControl : MonoBehaviour
         {
             OpenMessagePanel("");
             errormessage++;
-            Second();
-            
+            StartCoroutine(Second());
+
+
         }
 
         if (trashcan.gameObject.CompareTag("glasstrashcan") & Input.GetKeyDown(KeyCode.N))
@@ -281,8 +282,8 @@ public class SimpleCharacterControl : MonoBehaviour
         {
             OpenMessagePanel("");
             errormessage++;
-            Second();
-            
+            StartCoroutine(Second());
+
         }
 
         if (trashcan.gameObject.CompareTag("plastictrashcan") & Input.GetKeyDown(KeyCode.M))
@@ -297,7 +298,7 @@ public class SimpleCharacterControl : MonoBehaviour
         {
             OpenMessagePanel("");
             errormessage++;
-            Second();
+            StartCoroutine( Second());
             
         }
 
@@ -343,10 +344,13 @@ public class SimpleCharacterControl : MonoBehaviour
 
     IEnumerator Second() {
 
-        if (MessagePanel.activeSelf)
+        if (MessagePanel.activeInHierarchy)
         {
-            yield return new WaitForSeconds(3);
-            CloseMessagePanel();
+            yield return new WaitForSeconds(3.0f);
+            MessagePanel.SetActive(false);
+
+
+
         }
 
 
