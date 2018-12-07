@@ -12,6 +12,9 @@ TagManager:
   - plastictrashcan
   - papertrashcan
   - glasstrashcan
+  - heartone
+  - hearttwo
+  - heartthree
   layers:
   - Default
   - TransparentFX

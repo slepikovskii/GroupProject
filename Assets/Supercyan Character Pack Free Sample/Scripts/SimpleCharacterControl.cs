@@ -9,7 +9,16 @@ public class SimpleCharacterControl : MonoBehaviour
 {
 
     public GameObject MessagePanel;
-   
+<<<<<<< HEAD
+    public AudioSource Select;
+=======
+    public GameObject heartone;
+    public Image hearttwo;
+<<<<<<< HEAD
+    public Image heartthree;
+=======
+>>>>>>> 122be2b60352873f176991fbeb4a7f306db70c9b
+>>>>>>> db69720f11d7956dc212dd433cc980b8a5eb993d
 
     private enum ControlMode
     {
@@ -213,7 +222,8 @@ public class SimpleCharacterControl : MonoBehaviour
         {
             
             m_animator.SetTrigger("Pickup");
-           
+            Select = GetComponent<AudioSource>();
+            Select.Play();
 
 
             if (other.gameObject.CompareTag("paperpickup"))
@@ -250,7 +260,14 @@ public class SimpleCharacterControl : MonoBehaviour
 
             Destroy(other.gameObject);
 
+<<<<<<< HEAD
             
+=======
+            if ((papercountlast == 9 && glasscountlast == 12 && plasticcountlast == 12) && (papercount == 0 && glasscount == 0 && plasticcount == 0))
+            {
+                winmenu();
+            }
+>>>>>>> b5b2761d028c79f4c868ff39fbd1736b1b9a23c9
 
 
 
@@ -282,8 +299,23 @@ public class SimpleCharacterControl : MonoBehaviour
         }
         if (trashcan.gameObject.CompareTag("papertrashcan") & (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.M)))
         {
-            OpenMessagePanel("");
+            OpenMessagePanel("");            
             errormessage++;
+            if (errormessage == 1)
+            {
+                Destroy(heartone);
+
+            }
+            else if (errormessage == 2)
+            {
+                Destroy(hearttwo);
+
+            }
+            else if (errormessage == 3)
+            {
+                Destroy(heartthree);
+            }
+
             StartCoroutine(Second());
 
 
@@ -300,8 +332,23 @@ public class SimpleCharacterControl : MonoBehaviour
         }
         if (trashcan.gameObject.CompareTag("glasstrashcan") & (Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.M)))
         {
-            OpenMessagePanel("");
+            OpenMessagePanel("");            
             errormessage++;
+            if (errormessage == 1)
+            {
+                Destroy(heartone);
+
+            }
+            else if (errormessage == 2)
+            {
+                Destroy(hearttwo);
+
+            }
+            else if (errormessage == 3)
+            {
+                Destroy(heartthree);
+            }
+        
             StartCoroutine(Second());
 
         }
@@ -318,6 +365,21 @@ public class SimpleCharacterControl : MonoBehaviour
         {
             OpenMessagePanel("");
             errormessage++;
+            if (errormessage == 1)
+            {
+                Destroy(heartone);
+
+            }
+            else if (errormessage == 2)
+            {
+                Destroy(hearttwo);
+
+            }
+            else if (errormessage == 3)
+            {
+                Destroy(heartthree);
+            }
+
             StartCoroutine( Second());
             
         }
@@ -328,6 +390,8 @@ public class SimpleCharacterControl : MonoBehaviour
 
         if (errormessage == 3)
         {
+
+            
             lostmenu();
         }
 
