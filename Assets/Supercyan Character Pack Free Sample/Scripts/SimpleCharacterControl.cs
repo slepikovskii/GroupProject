@@ -9,16 +9,9 @@ public class SimpleCharacterControl : MonoBehaviour
 {
 
     public GameObject MessagePanel;
-<<<<<<< HEAD
-    public AudioSource Select;
-=======
     public GameObject heartone;
     public Image hearttwo;
-<<<<<<< HEAD
     public Image heartthree;
-=======
->>>>>>> 122be2b60352873f176991fbeb4a7f306db70c9b
->>>>>>> db69720f11d7956dc212dd433cc980b8a5eb993d
 
     private enum ControlMode
     {
@@ -215,8 +208,7 @@ public class SimpleCharacterControl : MonoBehaviour
         {
             
             m_animator.SetTrigger("Pickup");
-            Select = GetComponent<AudioSource>();
-            Select.Play();
+           
 
 
             if (other.gameObject.CompareTag("paperpickup"))

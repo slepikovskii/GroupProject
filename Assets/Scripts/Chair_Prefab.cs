@@ -15,4 +15,8 @@ public class Chair_Prefab : MonoBehaviour {
 	void Update () {
 		
 	}
+
+   
+
+
 }

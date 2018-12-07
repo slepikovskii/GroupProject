@@ -5,8 +5,6 @@ public class Pickingup : MonoBehaviour
 {
 
     public Transform Desti;
-    
-
 
     void OnMouseDown()
     {
@@ -16,7 +14,7 @@ public class Pickingup : MonoBehaviour
         this.transform.position = Desti.position;
         this.transform.rotation = Desti.rotation;       
         this.transform.parent = GameObject.Find("Destination").transform;
-        
+
     }
 
     void OnMouseUp()
@@ -25,7 +23,6 @@ public class Pickingup : MonoBehaviour
         this.transform.parent = null;
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().isKinematic = false;
-        
     }
 
 
