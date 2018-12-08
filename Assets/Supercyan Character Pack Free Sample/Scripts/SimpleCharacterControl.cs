@@ -9,13 +9,9 @@ public class SimpleCharacterControl : MonoBehaviour
 {
 
     public GameObject MessagePanel;
-<<<<<<< HEAD
     public GameObject heartone;
     public Image hearttwo;
     public Image heartthree;
-=======
-   
->>>>>>> 56736ed4a2c5fff3ea57d2ebc497e3a1ad6cc068
 
     private enum ControlMode
     {
@@ -58,13 +54,6 @@ public class SimpleCharacterControl : MonoBehaviour
 
     private bool m_isGrounded;
     private List<Collider> m_collisions = new List<Collider>();
-
-    public AudioClip audioclip1;
-    public AudioClip audioclip2;
-    public AudioClip audioclip3;
-    public AudioSource paperaudio;
-    public AudioSource glassaudio;
-    public AudioSource plasticaudio;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -224,55 +213,42 @@ public class SimpleCharacterControl : MonoBehaviour
 
             if (other.gameObject.CompareTag("paperpickup"))
             {
-                
+
                 papercount++;
                 papercountlast++;
-                paperaudio.clip = audioclip1;
-                paperaudio.Play();
-
+                
             }
             if (other.gameObject.CompareTag("glasspickup"))
             {
-              
 
                 glasscount++;
                 glasscountlast++;
-
-                glassaudio.clip = audioclip2;
-                glassaudio.Play();
-
+               
             }
             if (other.gameObject.CompareTag("plasticpickup"))
             {
-              
 
                 plasticcount++;
                 plasticcountlast++;
-                plasticaudio.clip = audioclip3;
-                plasticaudio.Play();
-
+                
             }
 
 
             Destroy(other.gameObject);
 
-            
+            if ((papercountlast == 9 && glasscountlast == 12 && plasticcountlast == 12) && (papercount == 0 && glasscount == 0 && plasticcount == 0))
+            {
+                winmenu();
+            }
 
 
 
         }
 
-        WinCondition();
 
 
 
-    }
-    public void WinCondition()
-    {
-        if (papercountlast == 9 && glasscountlast == 12 && plasticcountlast == 12 && papercount == 0 && glasscount == 0 && plasticcount == 0)
-        {
-            winmenu();
-        }
+
     }
 
     public void Putting(Collider trashcan)
@@ -288,8 +264,23 @@ public class SimpleCharacterControl : MonoBehaviour
         }
         if (trashcan.gameObject.CompareTag("papertrashcan") & (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.M)))
         {
-            OpenMessagePanel("");
+            OpenMessagePanel("");            
             errormessage++;
+            if (errormessage == 1)
+            {
+                Destroy(heartone);
+
+            }
+            else if (errormessage == 2)
+            {
+                Destroy(hearttwo);
+
+            }
+            else if (errormessage == 3)
+            {
+                Destroy(heartthree);
+            }
+
             StartCoroutine(Second());
 
 
@@ -306,8 +297,23 @@ public class SimpleCharacterControl : MonoBehaviour
         }
         if (trashcan.gameObject.CompareTag("glasstrashcan") & (Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.M)))
         {
-            OpenMessagePanel("");
+            OpenMessagePanel("");            
             errormessage++;
+            if (errormessage == 1)
+            {
+                Destroy(heartone);
+
+            }
+            else if (errormessage == 2)
+            {
+                Destroy(hearttwo);
+
+            }
+            else if (errormessage == 3)
+            {
+                Destroy(heartthree);
+            }
+        
             StartCoroutine(Second());
 
         }
@@ -324,6 +330,21 @@ public class SimpleCharacterControl : MonoBehaviour
         {
             OpenMessagePanel("");
             errormessage++;
+            if (errormessage == 1)
+            {
+                Destroy(heartone);
+
+            }
+            else if (errormessage == 2)
+            {
+                Destroy(hearttwo);
+
+            }
+            else if (errormessage == 3)
+            {
+                Destroy(heartthree);
+            }
+
             StartCoroutine( Second());
             
         }
@@ -334,6 +355,8 @@ public class SimpleCharacterControl : MonoBehaviour
 
         if (errormessage == 3)
         {
+
+            
             lostmenu();
         }
 
