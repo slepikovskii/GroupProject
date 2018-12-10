@@ -2400,11 +2400,8 @@ RectTransform:
   - {fileID: 1920398605}
   - {fileID: 253208125}
   - {fileID: 1684421268}
-<<<<<<< HEAD
-=======
   - {fileID: 837420966}
   - {fileID: 1167029161}
->>>>>>> 893c893d30559210a5ffce852c5d0a4a206ffd6d
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3140,8 +3137,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 994ac4b175471114f8fef81b98042736, type: 2}
   m_IsPrefabAsset: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &837420965
 GameObject:
   m_ObjectHideFlags: 0
@@ -3224,7 +3219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c16903e290bb1e4e9686be9717ce23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
->>>>>>> 893c893d30559210a5ffce852c5d0a4a206ffd6d
 --- !u!1 &842146060 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1147897022701068, guid: 100d0fd396045364ba463ba9e3a8051a,
