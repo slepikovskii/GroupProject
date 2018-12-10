@@ -52,6 +52,11 @@ public class SimpleCharacterControl : MonoBehaviour
     private float m_jumpTimeStamp = 0;
     private float m_minJumpInterval = 0.25f;
 
+    public AudioSource putaudiosource;
+    public AudioSource paperaudio;
+    public AudioSource glassaudio;
+    public AudioSource plasticaudio;
+
     private bool m_isGrounded;
     private List<Collider> m_collisions = new List<Collider>();
 
@@ -216,6 +221,7 @@ public class SimpleCharacterControl : MonoBehaviour
 
                 papercount++;
                 papercountlast++;
+                paperaudio.Play();
                 
             }
             if (other.gameObject.CompareTag("glasspickup"))
@@ -223,6 +229,7 @@ public class SimpleCharacterControl : MonoBehaviour
 
                 glasscount++;
                 glasscountlast++;
+                glassaudio.Play();
                
             }
             if (other.gameObject.CompareTag("plasticpickup"))
@@ -230,21 +237,23 @@ public class SimpleCharacterControl : MonoBehaviour
 
                 plasticcount++;
                 plasticcountlast++;
+                plasticaudio.Play();
+                   
                 
             }
 
 
             Destroy(other.gameObject);
 
-            if ((papercountlast == 9 && glasscountlast == 12 && plasticcountlast == 12) && (papercount == 0 && glasscount == 0 && plasticcount == 0))
-            {
-                winmenu();
-            }
+            
 
 
 
         }
-
+        if (papercountlast == 9 && glasscountlast == 12 && plasticcountlast == 12 && papercount == 0 && glasscount == 0 && plasticcount == 0)
+        {
+            winmenu();
+        }
 
 
 
@@ -259,6 +268,7 @@ public class SimpleCharacterControl : MonoBehaviour
             if (papercount != 0)
             {
                 papercount = papercount -1;
+                putaudiosource.Play();
 
             }
         }
@@ -291,6 +301,7 @@ public class SimpleCharacterControl : MonoBehaviour
             if (glasscount !=0)
             {
                 glasscount--;
+                putaudiosource.Play();
 
             }
        
@@ -323,6 +334,7 @@ public class SimpleCharacterControl : MonoBehaviour
             if (plasticcount !=0)
             {
                 plasticcount--;
+                putaudiosource.Play();
             }
 
         }
@@ -344,7 +356,8 @@ public class SimpleCharacterControl : MonoBehaviour
             {
                 Destroy(heartthree);
             }
-
+           
+               
             StartCoroutine( Second());
             
         }
