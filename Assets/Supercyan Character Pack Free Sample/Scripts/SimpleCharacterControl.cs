@@ -169,7 +169,7 @@ public class SimpleCharacterControl : MonoBehaviour
 
 
 
-
+    //Artem
     private void OnTriggerStay(Collider other)
     {
         Picking(other);
@@ -206,7 +206,7 @@ public class SimpleCharacterControl : MonoBehaviour
 
     
 
-    
+    //Elena
     public void Picking(Collider other)
     {
         if (Input.GetKeyDown(KeyCode.E) & (other.gameObject.CompareTag("paperpickup") || other.gameObject.CompareTag("plasticpickup") ||  other.gameObject.CompareTag("glasspickup") ))
@@ -248,8 +248,8 @@ public class SimpleCharacterControl : MonoBehaviour
             
 
 
-
         }
+        //Ceci
         if (papercountlast == 9 && glasscountlast == 12 && plasticcountlast == 12 && papercount == 0 && glasscount == 0 && plasticcount == 0)
         {
             winmenu();
@@ -257,9 +257,8 @@ public class SimpleCharacterControl : MonoBehaviour
 
 
 
-
     }
-
+    //Artem
     public void Putting(Collider trashcan)
     {
         if (trashcan.gameObject.CompareTag("papertrashcan") & Input.GetKeyDown(KeyCode.B))
@@ -272,6 +271,7 @@ public class SimpleCharacterControl : MonoBehaviour
 
             }
         }
+        //Betül
         if (trashcan.gameObject.CompareTag("papertrashcan") & (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.M)))
         {
             OpenMessagePanel("");            
@@ -295,7 +295,7 @@ public class SimpleCharacterControl : MonoBehaviour
 
 
         }
-
+        //Artem
         if (trashcan.gameObject.CompareTag("glasstrashcan") & Input.GetKeyDown(KeyCode.N))
         {            
             if (glasscount !=0)
@@ -304,8 +304,8 @@ public class SimpleCharacterControl : MonoBehaviour
                 putaudiosource.Play();
 
             }
-       
-        }
+               }
+        //Betül
         if (trashcan.gameObject.CompareTag("glasstrashcan") & (Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.M)))
         {
             OpenMessagePanel("");            
@@ -326,9 +326,8 @@ public class SimpleCharacterControl : MonoBehaviour
             }
         
             StartCoroutine(Second());
-
         }
-
+        //Artem
         if (trashcan.gameObject.CompareTag("plastictrashcan") & Input.GetKeyDown(KeyCode.M))
         {
             if (plasticcount !=0)
@@ -336,8 +335,8 @@ public class SimpleCharacterControl : MonoBehaviour
                 plasticcount--;
                 putaudiosource.Play();
             }
-
         }
+        //Betül
         if (trashcan.gameObject.CompareTag("plastictrashcan") & (Input.GetKeyDown(KeyCode.B) || Input.GetKeyDown(KeyCode.N)))
         {
             OpenMessagePanel("");
@@ -366,6 +365,7 @@ public class SimpleCharacterControl : MonoBehaviour
 
 
 
+        //Ceci
         if (errormessage == 3)
         {
 
@@ -390,7 +390,7 @@ public class SimpleCharacterControl : MonoBehaviour
     }
 
 
-
+    //Betül
     public void OpenMessagePanel(string text) {
 
         MessagePanel.SetActive(true);
@@ -403,7 +403,7 @@ public class SimpleCharacterControl : MonoBehaviour
         MessagePanel.SetActive(false);
     }
 
-
+    //Artem
     IEnumerator Second() {
 
         if (MessagePanel.activeInHierarchy)
