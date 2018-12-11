@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Artem
+//Svyatoslav
 public class Sound : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
