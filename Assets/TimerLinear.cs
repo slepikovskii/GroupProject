@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+//Betül 
 public class TimerLinear : MonoBehaviour {
 
     Image FillImg;
